@@ -1,0 +1,5 @@
+python-telegram-bot==22.1
+python-dotenv==1.1.0
+chatterbox-tts==0.1.1
+ollama==0.5.1
+openai-whisper==20240930
