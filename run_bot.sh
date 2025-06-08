@@ -26,8 +26,7 @@ if [ -z "$TELEGRAM_BOT_TOKEN" ]; then
     echo "export TELEGRAM_BOT_TOKEN='your_bot_token_here'"
     echo ""
     echo "Or create a .env file with:"
-    echo "echo 'export TELEGRAM_BOT_TOKEN=\"your_bot_token_here\"' > .env"
-    echo "source .env"
+    echo "echo 'TELEGRAM_BOT_TOKEN=\"your_bot_token_here\"' > .env"
     echo ""
     exit 1
 fi
