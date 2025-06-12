@@ -12,21 +12,21 @@ if [[ "$CONDA_DEFAULT_ENV" != "watts-ai" ]]; then
     exit 1
 fi
 
-# Check if bot token is set
-if [ -z "$TELEGRAM_BOT_TOKEN" ]; then
+# Check if .env file exists and contains TELEGRAM_BOT_TOKEN
+if [ ! -f ".env" ] || ! grep -q "TELEGRAM_BOT_TOKEN" ".env"; then
     echo ""
-    echo "❌ TELEGRAM_BOT_TOKEN not found!"
+    echo "❌ .env file with TELEGRAM_BOT_TOKEN not found!"
     echo ""
     echo "To get a bot token:"
     echo "1. Open Telegram and search for @BotFather"
     echo "2. Send /newbot and follow the instructions"
     echo "3. Copy the token you receive"
     echo ""
-    echo "Then set the token by running:"
-    echo "export TELEGRAM_BOT_TOKEN='your_bot_token_here'"
-    echo ""
-    echo "Or create a .env file with:"
+    echo "Then create a .env file with:"
     echo "echo 'TELEGRAM_BOT_TOKEN=\"your_bot_token_here\"' > .env"
+    echo ""
+    echo "Or set as environment variable:"
+    echo "export TELEGRAM_BOT_TOKEN='your_bot_token_here'"
     echo ""
     exit 1
 fi
